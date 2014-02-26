@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7efddb38-0dbc-461f-be30-4113b4c78d59" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_4_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_analysis_4_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_tree_4_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_util_4_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_parboiled_parboiled_core_1_1_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_parboiled_parboiled_java_1_1_6.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languagespotter.iml" afterPath="$PROJECT_DIR$/languagespotter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="languagespotter.iws" />
@@ -58,23 +69,6 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/it/polito/clj/languagespotter/LanguageIdentifier.java" line="2" class="LanguageIdentifier.java" package="">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -97,9 +91,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/it/polito/clj/languagespotter/WekaStructuralProgrammingLanguageTokenizerTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="30" column="5" selection-start="928" selection-end="928" vertical-scroll-proportion="0.0" vertical-offset="147" max-vertical-offset="819">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -107,7 +99,7 @@
       <file leaf-file-name="AbstactWekaProgrammingLanguageTokenizer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/polito/clj/languagespotter/AbstactWekaProgrammingLanguageTokenizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="0" selection-start="976" selection-end="976" vertical-scroll-proportion="0.0" vertical-offset="239" max-vertical-offset="882">
+            <state line="38" column="0" selection-start="976" selection-end="976" vertical-scroll-proportion="0.0" vertical-offset="798" max-vertical-offset="924">
               <folding />
             </state>
           </provider>
@@ -116,7 +108,7 @@
       <file leaf-file-name="GenericProgrammingLanguageTokenizer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/polito/clj/languagespotter/GenericProgrammingLanguageTokenizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="56" selection-start="1739" selection-end="1739" vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="1239">
+            <state line="49" column="56" selection-start="1739" selection-end="1739" vertical-scroll-proportion="0.0" vertical-offset="1029" max-vertical-offset="1428">
               <folding />
             </state>
           </provider>
@@ -126,9 +118,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/it/polito/clj/languagespotter/LanguageIdentifier.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="23" column="7" selection-start="491" selection-end="491" vertical-scroll-proportion="0.0" vertical-offset="87" max-vertical-offset="2709">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -136,11 +126,8 @@
       <file leaf-file-name="ParsingException.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/polito/clj/languagespotter/ParsingException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="34" selection-start="576" selection-end="576" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="672">
-              <folding>
-                <element signature="e#323#324#0" expanded="true" />
-                <element signature="e#366#367#0" expanded="true" />
-              </folding>
+            <state line="21" column="34" selection-start="576" selection-end="576" vertical-scroll-proportion="0.0" vertical-offset="441" max-vertical-offset="672">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -148,13 +135,8 @@
       <file leaf-file-name="GenericProgrammingLanguageFlatParser.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/polito/clj/languagespotter/GenericProgrammingLanguageFlatParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="96" selection-start="2557" selection-end="2557" vertical-scroll-proportion="0.0" vertical-offset="554" max-vertical-offset="4116">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="class#AbstractJavaCharacterMatcher#0;class#GenericProgrammingLanguageFlatParser#0" expanded="false" />
-                <element signature="class#JavaLetterMatcher#0;class#GenericProgrammingLanguageFlatParser#0" expanded="false" />
-                <element signature="class#JavaLetterOrDigitMatcher#0;class#GenericProgrammingLanguageFlatParser#0" expanded="false" />
-              </folding>
+            <state line="91" column="96" selection-start="2557" selection-end="2557" vertical-scroll-proportion="0.0" vertical-offset="1911" max-vertical-offset="5292">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -171,7 +153,7 @@
       <file leaf-file-name="GenericProgrammingLanguageTokenizerTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/it/polito/clj/languagespotter/GenericProgrammingLanguageTokenizerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="1" selection-start="799" selection-end="960" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="987">
+            <state line="27" column="1" selection-start="799" selection-end="960" vertical-scroll-proportion="0.0" vertical-offset="567" max-vertical-offset="1008">
               <folding />
             </state>
           </provider>
@@ -180,7 +162,7 @@
       <file leaf-file-name="Token.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/polito/clj/languagespotter/Token.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="234" selection-end="234" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1029">
+            <state line="14" column="0" selection-start="234" selection-end="234" vertical-scroll-proportion="0.0" vertical-offset="294" max-vertical-offset="1113">
               <folding />
             </state>
           </provider>
@@ -249,8 +231,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -279,12 +259,58 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="languagespotter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="languagespotter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="languagespotter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="languagespotter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="languagespotter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -294,16 +320,8 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
-    <property name="OverrideImplement.combined" value="true" />
-    <property name="OverrideImplement.overriding.sorted" value="false" />
-    <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
@@ -319,30 +337,8 @@
       <recent name="$PROJECT_DIR$/lib" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in test (1)">
+  <component name="RunManager" selected="JUnit.it.polito.clj.languagespotter in languagespotter">
     <configuration default="false" name="All in test (4)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="All in test (5)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -430,6 +426,28 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
+    <configuration default="false" name="it.polito.clj.languagespotter in languagespotter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="languagespotter" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="it.polito.clj.languagespotter" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -456,6 +474,14 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
     <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
       <module name="" />
       <setting name="path" value="" />
@@ -469,12 +495,17 @@
       <setting name="showProgressMessages" value="true" />
       <method />
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -502,19 +533,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -551,6 +569,19 @@
       <patterns />
       <method />
     </configuration>
+    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <method />
+    </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -570,33 +601,20 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="$PROJECT_DIR$" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
-      <setting name="showProgressMessages" value="true" />
-      <method />
-    </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.All in test (4)" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.All in test (5)" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.All in test (2)" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.All in test" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.All in test (1)" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.All in test (2)" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.All in test" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.All in test (1)" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.it.polito.clj.languagespotter in languagespotter" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.All in test (1)" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.All in test" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.All in test (2)" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.All in test (5)" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.All in test (4)" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.it.polito.clj.languagespotter in languagespotter" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.All in test (4)" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.All in test (1)" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.All in test" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.All in test (2)" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -615,7 +633,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1922" height="1054" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -634,7 +652,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32944915" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32944915" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -663,6 +681,76 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="18" selection-start="1018" selection-end="1018" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1260">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/it/polito/clj/languagespotter/WekaStructuralProgrammingLanguageTokenizerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="5" selection-start="928" selection-end="928" vertical-scroll-proportion="0.0" vertical-offset="147" max-vertical-offset="819">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polito/clj/languagespotter/AbstactWekaProgrammingLanguageTokenizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="0" selection-start="976" selection-end="976" vertical-scroll-proportion="0.0" vertical-offset="798" max-vertical-offset="924">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polito/clj/languagespotter/GenericProgrammingLanguageTokenizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="56" selection-start="1739" selection-end="1739" vertical-scroll-proportion="0.0" vertical-offset="1029" max-vertical-offset="1428">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polito/clj/languagespotter/LanguageIdentifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="7" selection-start="491" selection-end="491" vertical-scroll-proportion="0.0" vertical-offset="87" max-vertical-offset="2709">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polito/clj/languagespotter/ParsingException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="34" selection-start="576" selection-end="576" vertical-scroll-proportion="0.0" vertical-offset="441" max-vertical-offset="672">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polito/clj/languagespotter/GenericProgrammingLanguageFlatParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="96" selection-start="2557" selection-end="2557" vertical-scroll-proportion="0.0" vertical-offset="1911" max-vertical-offset="5292">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/test.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/it/polito/clj/languagespotter/GenericProgrammingLanguageTokenizerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="1" selection-start="799" selection-end="960" vertical-scroll-proportion="0.0" vertical-offset="567" max-vertical-offset="1008">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polito/clj/languagespotter/Token.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="234" selection-end="234" vertical-scroll-proportion="0.0" vertical-offset="294" max-vertical-offset="1113">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/polito/clj/languagespotter/Learner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="140" column="4" selection-start="4352" selection-end="4352" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3066">
@@ -710,22 +798,14 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/it/polito/clj/languagespotter/ParsingException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="55" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="357">
-          <folding>
-            <element signature="e#323#324#0" expanded="true" />
-            <element signature="e#366#367#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/polito/clj/languagespotter/GenericProgrammingLanguageFlatParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="2" selection-start="465" selection-end="466" vertical-scroll-proportion="0.0" vertical-offset="273" max-vertical-offset="3759">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#AbstractJavaCharacterMatcher#0;class#GenericProgrammingLanguageFlatParser#0" expanded="false" />
-            <element signature="class#JavaLetterMatcher#0;class#GenericProgrammingLanguageFlatParser#0" expanded="false" />
-            <element signature="class#JavaLetterOrDigitMatcher#0;class#GenericProgrammingLanguageFlatParser#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -743,16 +823,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/languagespotter.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="79" selection-end="79" vertical-scroll-proportion="0.0" vertical-offset="42" max-vertical-offset="399" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0" vertical-offset="147" max-vertical-offset="588">
-          <folding />
-        </state>
+        <state line="7" column="13" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0" vertical-offset="147" max-vertical-offset="588" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/main.iml">
@@ -763,9 +836,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/it/polito/clj/languagespotter/LanguageIdentifier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="70" column="59" selection-start="1896" selection-end="1896" vertical-scroll-proportion="0.0" vertical-offset="1470" max-vertical-offset="2520">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -811,16 +882,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/languagespotter.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="289" selection-end="289" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="462" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
-          <folding />
-        </state>
+        <state line="7" column="13" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/main.iml">
@@ -838,9 +902,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/it/polito/clj/languagespotter/LanguageIdentifier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="7" selection-start="491" selection-end="491" vertical-scroll-proportion="0.0" vertical-offset="87" max-vertical-offset="2709">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -854,10 +916,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/it/polito/clj/languagespotter/ParsingException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="34" selection-start="576" selection-end="576" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="672">
-          <folding>
-            <element signature="e#323#324#0" expanded="true" />
-            <element signature="e#366#367#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -899,21 +958,14 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/it/polito/clj/languagespotter/GenericProgrammingLanguageFlatParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="91" column="96" selection-start="2557" selection-end="2557" vertical-scroll-proportion="0.0" vertical-offset="554" max-vertical-offset="4116">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#AbstractJavaCharacterMatcher#0;class#GenericProgrammingLanguageFlatParser#0" expanded="false" />
-            <element signature="class#JavaLetterMatcher#0;class#GenericProgrammingLanguageFlatParser#0" expanded="false" />
-            <element signature="class#JavaLetterOrDigitMatcher#0;class#GenericProgrammingLanguageFlatParser#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/it/polito/clj/languagespotter/WekaStructuralProgrammingLanguageTokenizerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="5" selection-start="928" selection-end="928" vertical-scroll-proportion="0.0" vertical-offset="147" max-vertical-offset="819">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
