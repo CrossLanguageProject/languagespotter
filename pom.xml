@@ -26,7 +26,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.4</version>
       <scope>test</scope>
     </dependency>
     
@@ -44,6 +44,11 @@
       <version>0.1</version>    
       <scope>system</scope>
       <systemPath>${system.libs}/HMM.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>org.parboiled</groupId>
+      <artifactId>parboiled-java</artifactId>
+      <version>1.1.6</version>
     </dependency>
   </dependencies>
 </project>
