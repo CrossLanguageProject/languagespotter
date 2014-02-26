@@ -33,18 +33,29 @@ public class WekaLexicalProgrammingLanguageTokenizerTest {
     }
 
     @Test
-    public void parseAssignement() throws Exception {
+    public void parseJavaAssignement() throws Exception {
         assertParse("a *= 7 +(2- 3)","a","*=","7","+","(","2","-","3",")");
     }
 
     @Test
-    public void parseASimpleMethod() {
+    public void parseASimpleJavaMethod() {
         String code = "    @Test\n" +
                 "    public void parseIgnoreBlockComment() throws Exception {\n" +
                 "        assertParse(\"aString\",new Token(\"StringLiteral\", \"\\\"abc\\\"\"));\n" +
                 "    }";
         assertParse(code,"@Test","public","void","parseIgnoreBlockComment","(",")","throws","Exception","{","assertParse",
                 "(","\"aString\"",",","new","Token","(","\"StringLiteral\"",",","\"\\\"abc\\\"\"",")",")",";","}");
+    }
+
+    @Test
+    public void parsePreambleOfJavaFile() {
+        String code = "package it.polito.clj.languagespotter;\n"+
+            "\n"+
+            "import org.junit.Test;\n"+
+            "import static org.junit.Assert.*;";
+        assertParse(code,"package","it",".","polito",".","clj",".","languagespotter",";",
+                "import","org",".","junit",".","Test",";",
+                "import","static","org",".","junit",".","Assert",".","*",";");
     }
 
 }

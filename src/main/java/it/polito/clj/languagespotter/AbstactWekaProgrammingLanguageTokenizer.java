@@ -2,6 +2,7 @@ package it.polito.clj.languagespotter;
 
 import weka.core.tokenizers.WordTokenizer;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -31,6 +32,17 @@ abstract class AbstactWekaProgrammingLanguageTokenizer extends WordTokenizer {
         GenericProgrammingLanguageTokenizer t = new GenericProgrammingLanguageTokenizer();
         this.tokens = t.parse(code);
         indexOfNextElement = 0;
+    }
+
+    public List<String> getAllTokens(){
+        if (tokens==null){
+            throw new IllegalStateException();
+        }
+        List<String> adaptedTokens = new LinkedList<>();
+        for (Token t : tokens){
+            adaptedTokens.add(adapt(t));
+        }
+        return adaptedTokens;
     }
 
     protected abstract String adapt(Token token);

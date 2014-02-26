@@ -1,0 +1,10 @@
+
+    public void testEdit() throws Exception {
+        log.debug("testing edit...");
+        request = newGet("/editPerson.html");
+        request.addParameter("username", "tomcat");
+
+        mv = c.handleRequest(request, new MockHttpServletResponse());
+
+        assertEquals("personForm", mv.getViewName());
+    }

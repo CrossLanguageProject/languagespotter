@@ -1,0 +1,24 @@
+public class GetterToSetter {//クラス
+	
+	private int data;//フィールド
+	
+	public int getData(){//メソッド
+		return data;
+	}
+	
+	public void setData(int param){//メソッド
+		data = param;
+	}
+
+}
+class GetterToSetterRunner
+{
+	public static void main(String[] args) {
+		GetterToSetter gts = new GetterToSetter();	//GetterToSetterのインスタンス化
+		
+		gts.setData(100);//GetterToSetterに100を投げる
+		
+		int i = gts.getData();
+		System.out.println(i);
+	}
+}

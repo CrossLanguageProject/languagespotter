@@ -1,0 +1,49 @@
+package ee.tmtu.kuri;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class AssetManager {
+
+    private static final List<AssetReference> assetLoaders = new ArrayList<>();
+    private static final Map<String, Object> loadedCache = new HashMap<>();
+
+    public static <T> T load(String res) {
+        return load(res, AssetManager.assetLoaders);
+    }
+
+    public static <T> T load(String res, List<AssetReference> loaders) {
+        File file = new File(res);
+        if (AssetManager.loadedCache.containsKey(file.getPath())) {
+            return (T) AssetManager.loadedCache.get(file.getPath());
+        }
+        String ext = res.substring(res.lastIndexOf('.', res.length() - 1));
+        AssetLoader al = null;
+        for(AssetReference ref : loaders) {
+            if((al = ref.extensions.get(ext.toLowerCase())) != null) break;
+            else return null;
+        }
+        T ret = null;
+        try {
+            ret = (T) al.load(file);
+            AssetManager.loadedCache.put(file.getPath(), ret);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return ret;
+    }
+
+    public static void register(AssetReference ar) {
+        AssetManager.assetLoaders.add(ar);
+    }
+
+    static {
+        AssetManager.register(new AssetReference().extension("png", new PngLoader()));
+        AssetManager.register(new AssetReference().extension("js", new JsLoader()));
+    }
+
+}
