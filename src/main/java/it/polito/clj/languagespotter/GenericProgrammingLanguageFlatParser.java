@@ -10,11 +10,13 @@ import org.parboiled.annotations.SuppressSubnodes;
 import org.parboiled.matchers.CustomMatcher;
 
 /**
+ * This parser basically give a Root node containing as children all the tokens.
+ *
  * Most of the code is just stolen from one example of the Parboiled project.
  */
 @SuppressWarnings({"InfiniteRecursion"})
 @BuildParseTree
-class ParboiledParser extends BaseParser<Object> {
+class GenericProgrammingLanguageFlatParser extends BaseParser<Object> {
 
     public abstract class AbstractJavaCharacterMatcher extends CustomMatcher {
 

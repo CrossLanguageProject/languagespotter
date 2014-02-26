@@ -11,7 +11,6 @@ import org.parboiled.support.ParsingResult;
 
 import static org.parboiled.errors.ErrorUtils.printParseError;
 
-
 /**
  * It is a tokenizer working with the most common programming
  * languages operators and keywords.
@@ -19,7 +18,7 @@ import static org.parboiled.errors.ErrorUtils.printParseError;
  * Basically it is build unifying all the tokens definitions from a plethora
  * of languages.
  */
-public class GenericProgrammingLanguageTokenizer {
+class GenericProgrammingLanguageTokenizer {
 
     private List<String> rulesToIgnore = new LinkedList<>();
 
@@ -43,7 +42,7 @@ public class GenericProgrammingLanguageTokenizer {
     }
 
     public List<Token> parse(String code) {
-        ParboiledParser pp = Parboiled.createParser(ParboiledParser.class);
+        GenericProgrammingLanguageFlatParser pp = Parboiled.createParser(GenericProgrammingLanguageFlatParser.class);
         ReportingParseRunner rpr = new ReportingParseRunner<Object>(pp.ListOfTokens());
         ParsingResult pr = rpr.run(code);
         for (Object pe : pr.parseErrors){
