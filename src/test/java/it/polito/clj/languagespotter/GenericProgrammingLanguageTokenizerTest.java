@@ -3,9 +3,6 @@ package it.polito.clj.languagespotter;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- * Created by federico on 2/26/14.
- */
 public class GenericProgrammingLanguageTokenizerTest {
 
     private void assertParse(String code, Token... tokens){

@@ -85,7 +85,17 @@ class GenericProgrammingLanguageFlatParser extends BaseParser<Object> {
     }
 
     Rule Anything(){
-        return FirstOf(Spacing(),IntegerLiteral(),Keyword(),Identifier(),StringLiteral());
+        return FirstOf(Spacing(),IntegerLiteral(),Keyword(),Annotation(),Identifier(),StringLiteral(),Operator());
+    }
+
+    Rule Operator(){
+        return FirstOf("*=","/=","+=","===","-=","--","++","-","+","**","*","/","^",";",":",",","?","!","(",")","{","}","[","]");
+    }
+
+    @SuppressSubnodes
+    @MemoMismatches
+    Rule Annotation() {
+        return Sequence("@",TestNot(Keyword()), Letter(), ZeroOrMore(LetterOrDigit()));
     }
 
     @SuppressSubnodes

@@ -5,7 +5,7 @@ import weka.core.tokenizers.WordTokenizer;
 import java.util.List;
 
 /**
- * Created by federico on 2/26/14.
+ * Adapter from GenericProgrammingLanguageTokenizer to WordTokenizer.
  */
 abstract class AbstactWekaProgrammingLanguageTokenizer extends WordTokenizer {
 

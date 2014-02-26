@@ -45,15 +45,16 @@ class GenericProgrammingLanguageTokenizer {
         GenericProgrammingLanguageFlatParser pp = Parboiled.createParser(GenericProgrammingLanguageFlatParser.class);
         ReportingParseRunner rpr = new ReportingParseRunner<Object>(pp.ListOfTokens());
         ParsingResult pr = rpr.run(code);
+        List<String> errors = new LinkedList<>();
         for (Object pe : pr.parseErrors){
-            System.out.println("Parsing error: "+printParseError((ParseError)pe));
+            errors.add(printParseError((ParseError)pe));
         }
         List<Token> tokens = new LinkedList<Token>();
         if (pr.parseTreeRoot!=null){
             Node listOfTokens = pr.parseTreeRoot;
             analyze(listOfTokens,tokens,code);
         } else {
-            throw new ParsingException();
+            throw new ParsingException(errors);
         }
         return tokens;
     }
