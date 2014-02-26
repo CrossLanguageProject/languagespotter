@@ -4,9 +4,12 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Random;
 
 import weka.classifiers.Classifier;
 import weka.classifiers.bayes.HMM;
+import weka.classifiers.bayes.NaiveBayes;
+import weka.classifiers.evaluation.Evaluation;
 import weka.core.Instances;
 import weka.core.converters.ArffLoader.ArffReader;
 import weka.core.converters.TextDirectoryLoader;
@@ -23,7 +26,7 @@ public class Learner {
 	/**
 	 * Object that stores the classifier
 	 */
-	Classifier classifier = new HMM();
+	Classifier classifier = new NaiveBayes(); //HMM();
 			
 	/**
 	 * This method loads a dataset in ARFF format. 
@@ -49,7 +52,7 @@ public class Learner {
 			TextDirectoryLoader loader = new TextDirectoryLoader();
 		    loader.setDirectory(new File(name));
 			trainData = loader.getDataSet();
-			System.out.println(trainData);
+			//System.out.println(trainData);
 		
 			System.out.println("===== Loaded dataset from folder: " + name + " =====");
 		}
@@ -60,29 +63,22 @@ public class Learner {
 	}
 	
 	/**
-	 * This method evaluates the classifier. As recommended by WEKA documentation,
-	 * the classifier is defined but not trained yet. Evaluation of previously
-	 * trained classifiers can lead to unexpected results.
+	 * This method evaluates the classifier. 
 	 */
-//	public void evaluate() {
-//		try {
-//			StringToWordVector filter = new StringToWordVector();
-//			filter.setAttributeIndices("last");
-//			
-//			classifier = new FilteredClassifier();
-//			classifier.setFilter(filter);
-//			classifier.setClassifier(new HMM());
-//			Evaluation eval = new Evaluation(trainData);
-//			eval.crossValidateModel(classifier, trainData, 4, new Random(1));
-//			System.out.println(eval.toSummaryString());
-//			System.out.println(eval.toClassDetailsString());
-//			System.out.println("===== Evaluating on filtered (training) dataset done =====");
-//		}
-//		catch (Exception e) {
-//			System.out.println("Problem found when evaluating");
-//			e.printStackTrace();
-//		}
-//	}
+	public void evaluate() {
+		try {
+			
+			Evaluation eval = new Evaluation(trainData);
+			eval.crossValidateModel(classifier, trainData, 4, new Random(1));
+			System.out.println(eval.toSummaryString());
+			System.out.println(eval.toClassDetailsString());
+			System.out.println("===== Evaluating on filtered (training) dataset done =====");
+		}
+		catch (Exception e) {
+			System.out.println("Problem found when evaluating");
+			e.printStackTrace();
+		}
+	}
 	
 	/**
 	 * This method trains the classifier on the loaded data set.
@@ -102,7 +98,7 @@ public class Learner {
 	        r.setAttributeIndices("2-last,1");
 	        r.setInputFormat(trainData);
 	        trainData = Filter.useFilter(trainData, r);
-		    System.out.println(trainData);
+		    //System.out.println(trainData);
 	       
 	        classifier.buildClassifier(trainData);
 		    System.out.println("\n\nClassifier model:\n\n" + classifier);
@@ -133,9 +129,9 @@ public class Learner {
 	public static void main (String[] args) 
 	{
 		Learner learner = new Learner();
-		learner.loadDatasetFromDirectory("profiles");
-		//learner.evaluate();
+		learner.loadDatasetFromDirectory("gist");
 		learner.learn();
 		learner.saveModel("profiles.model");
+		learner.evaluate();
 	}
 }	

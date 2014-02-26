@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>clj</groupId>
+  <artifactId>languagespotter</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>languagespotter</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+    <java.version>1.7</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- configure this path -->
+    <system.libs>${basedir}/lib</system.libs>
+    <!-- configure this path
+    <system.data>${basedir}/data</system.data> -->
+    <jersey.version>2.2</jersey.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <!-- external dependencies -->
+    <dependency>
+      <groupId>nz.ac.waikato.cms.weka</groupId>
+      <artifactId>weka</artifactId>
+      <version>3.7.2</version>  
+      <scope>system</scope>
+      <systemPath>${system.libs}/weka.jar</systemPath>
+    </dependency> 
+    <dependency>
+      <groupId>weka.classifiers.bayes</groupId>
+      <artifactId>HMM</artifactId>
+      <version>0.1</version>    
+      <scope>system</scope>
+      <systemPath>${system.libs}/HMM.jar</systemPath>
+    </dependency>
+  </dependencies>
+</project>
