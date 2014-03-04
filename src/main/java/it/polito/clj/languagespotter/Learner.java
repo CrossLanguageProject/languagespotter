@@ -87,11 +87,16 @@ public class Learner {
 		try {
 			StringToWordVector v_filter = new StringToWordVector();
 			v_filter.setInputFormat(trainData);
-			v_filter.setOptions(
+			/*v_filter.setOptions(
 		            weka.core.Utils.splitOptions("-W 100000 " +
 		                                         "-tokenizer \"weka.core.tokenizers.WordTokenizer\" "+ 
 		                                         "-delimiters \"&[]//<>! \\r\\n\\t.,;:\\\'\\\"()?!{}\""));
-			
+			*/
+			v_filter.setOptions(
+					weka.core.Utils.splitOptions("-W 100000 " + 
+				                                 "-tokenizer \"it.polito.clj.languagespotter.WekaStructuralProgrammingLanguageTokenizer\" " +
+												 "-delimiters \"&[]//<>! \\r\\n\\t.,;:\\\'\\\"()?!{}\""));
+						
 		    trainData = Filter.useFilter(trainData, v_filter);
 		    	    
 	        Reorder r = new Reorder();
