@@ -146,7 +146,7 @@ public class Learner {
 	public static void main (String[] args) 
 	{
 		Learner learner = new Learner();
-		learner.loadDatasetFromDirectory("gist");
+		learner.loadDatasetFromDirectory("profiles/gist");
 		learner.learn();
 		learner.saveModel("profiles.model");
 		learner.evaluate();
