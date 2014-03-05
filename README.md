@@ -3,9 +3,13 @@ languagespotter
 
 ## Requirements
 
-### external libraries 
+Launch: mvn install
+
+### external libraries included in the project
 * weka 3.7.9 (or greater) http://www.cs.waikato.ac.nz/ml/weka/downloading.html
 * HMMWeka 0.1 (or greater) https://github.com/marcogillies/HMMWeka/
+
+
 
 ### programming language profiles
 see profile folder
