@@ -22,11 +22,13 @@ public class Learner {
 	/**
 	 * Object that stores training data.
 	 */
-	Instances trainData;
+	private Instances trainData;
 	/**
 	 * Object that stores the classifier
 	 */
-	Classifier classifier = new NaiveBayes(); //HMM();
+	private Classifier classifier = new NaiveBayes(); //HMM();
+
+    private static final int NUM_ATTRIBUTES = 2;
 			
 	/**
 	 * This method loads a dataset in ARFF format. 
@@ -36,11 +38,15 @@ public class Learner {
 			BufferedReader reader = new BufferedReader(new FileReader(name));
 			ArffReader arff = new ArffReader(reader);
 			trainData = arff.getData();
+            if (trainData.numAttributes()!=NUM_ATTRIBUTES){
+                throw new IllegalStateException("Train data expected to have "+NUM_ATTRIBUTES+" attribute, it has "+trainData.numAttributes());
+            }
 			System.out.println("===== Loaded dataset: " + name + " =====");
 			reader.close();
 		}
-		catch (IOException e) {
+		catch (Exception e) {
 			System.out.println("Problem found when reading: " + name);
+            throw new RuntimeException(e);
 		}
 	}
 	
@@ -52,13 +58,15 @@ public class Learner {
 			TextDirectoryLoader loader = new TextDirectoryLoader();
 		    loader.setDirectory(new File(name));
 			trainData = loader.getDataSet();
-			//System.out.println(trainData);
+            if (trainData.numAttributes()!=NUM_ATTRIBUTES){
+                throw new IllegalStateException("Train data expected to have "+NUM_ATTRIBUTES+" attribute, it has "+trainData.numAttributes());
+            }
 		
 			System.out.println("===== Loaded dataset from folder: " + name + " =====");
 		}
-		catch (IOException e) {
-			System.out.println("Problem found when reading from folder: " + name);
-			e.printStackTrace();
+		catch (Exception e) {
+			System.err.println("Problem found when reading from folder: " + name);
+			throw new RuntimeException(e);
 		}
 	}
 	
@@ -67,7 +75,9 @@ public class Learner {
 	 */
 	public void evaluate() {
 		try {
-			
+			if (null==trainData){
+                throw new IllegalStateException("Train data not initialized");
+            }
 			Evaluation eval = new Evaluation(trainData);
 			eval.crossValidateModel(classifier, trainData, 4, new Random(1));
 			System.out.println(eval.toSummaryString());
@@ -75,7 +85,7 @@ public class Learner {
 			System.out.println("===== Evaluating on filtered (training) dataset done =====");
 		}
 		catch (Exception e) {
-			System.out.println("Problem found when evaluating");
+			System.err.println("Problem found while evaluating: "+e.getMessage());
 			e.printStackTrace();
 		}
 	}
@@ -87,6 +97,9 @@ public class Learner {
 		try {
 			StringToWordVector v_filter = new StringToWordVector();
 			v_filter.setInputFormat(trainData);
+            if (NUM_ATTRIBUTES!=trainData.numAttributes()){
+                throw new IllegalStateException("Expected to have "+NUM_ATTRIBUTES+" attributes: "+trainData.numAttributes()+" found");
+            }
 			
 			//word tokenizer
 			/*v_filter.setOptions(
@@ -124,7 +137,7 @@ public class Learner {
 		}
 		catch (Exception e) {
 			System.out.println("Problem found when training");
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 	}
 	
@@ -146,7 +159,7 @@ public class Learner {
 	public static void main (String[] args) 
 	{
 		Learner learner = new Learner();
-		learner.loadDatasetFromDirectory("profiles/gist");
+		learner.loadDatasetFromDirectory("/home/federico/temp/gist/YAML");
 		learner.learn();
 		learner.saveModel("profiles.model");
 		learner.evaluate();

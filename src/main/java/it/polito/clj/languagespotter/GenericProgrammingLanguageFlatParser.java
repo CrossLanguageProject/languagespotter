@@ -85,13 +85,13 @@ class GenericProgrammingLanguageFlatParser extends BaseParser<Object> {
     }
 
     Rule Anything(){
-        return FirstOf(Spacing(),IntegerLiteral(),Keyword(),Annotation(),Identifier(),StringLiteral(),Operator(),
-                CharLiteral());
+        return FirstOf(Spacing(),IntegerLiteral(),Keyword(),Annotation(),Identifier(),StringLiteral(),RegExpLiteral(),Operator(),
+                CharLiteral(),JustAnOrphanStringLiteralDelimiter(),JustAnOrphanCharLiteralDelimiter());
     }
 
     Rule Operator(){
-        return FirstOf("*=","/=","+=","===","-=","--","++","-","+","**","*","/","^",";",":",",","?","!","(",")","{","}","[","]",
-                ".","<=",">=","<",">","=");
+        return FirstOf("<%=","/>","*=","/=","+=","===","-=","--","++","-","+","**","*","/","^",";",":",",","?","!","(",")","{","}","[","]",
+                ".","<=",">=","<",">","=","||","!=","&=","&&","|","&","%=","%","`","~");
     }
 
     @SuppressSubnodes
@@ -112,7 +112,7 @@ class GenericProgrammingLanguageFlatParser extends BaseParser<Object> {
     Rule Letter() {
         // switch to this "reduced" character space version for a ~10% parser performance speedup
         //return FirstOf(CharRange('a', 'z'), CharRange('A', 'Z'), '_', '$');
-        return FirstOf(Sequence('\\', UnicodeEscape()), new JavaLetterMatcher());
+        return FirstOf(Sequence('\\', Dot()), Sequence('\\', UnicodeEscape()), new JavaLetterMatcher(), JustASlash());
     }
 
     Rule StringLiteral() {
@@ -164,10 +164,29 @@ class GenericProgrammingLanguageFlatParser extends BaseParser<Object> {
     Rule CharLiteral() {
         return Sequence(
                 '\'',
-                FirstOf(Escape(), Sequence(TestNot(AnyOf("'\\")), ANY)).suppressSubnodes(),
+                ZeroOrMore(
+                        FirstOf(
+                                Escape(),
+                                Sequence(TestNot(AnyOf("\r\n'\\")), ANY)
+                        )
+                ).suppressSubnodes(),
                 '\''
         );
     }
+
+    Rule RegExpLiteral() {
+        return Sequence(
+                '/',
+                ZeroOrMore(
+                        FirstOf(
+                                Escape(),
+                                Sequence(TestNot(AnyOf("\r\n/\\")), ANY)
+                        )
+                ).suppressSubnodes(),
+                '/'
+        );
+    }
+
 
     @SuppressSubnodes
     Rule IntegerLiteral() {
@@ -190,9 +209,16 @@ class GenericProgrammingLanguageFlatParser extends BaseParser<Object> {
         return FirstOf(CharRange('a', 'f'), CharRange('A', 'F'), CharRange('0', '9'));
     }
 
+    Rule Dot() {
+        return CharRange('.', '.');
+    }
+
+    Rule JustASlash() {
+        return CharRange('\\','\\');
+    }
 
     Rule Escape() {
-        return Sequence('\\', FirstOf(AnyOf("btnfr\"\'\\"), OctalEscape(), UnicodeEscape()));
+        return Sequence('\\', FirstOf(AnyOf("btnfr\"\'\\/"), OctalEscape(), UnicodeEscape()));
     }
 
     Rule OctalEscape() {
@@ -207,14 +233,22 @@ class GenericProgrammingLanguageFlatParser extends BaseParser<Object> {
         return Sequence(OneOrMore('u'), HexDigit(), HexDigit(), HexDigit(), HexDigit());
     }
 
+    Rule JustAnOrphanCharLiteralDelimiter() {
+        return CharRange('\'','\'');
+    }
+
+    Rule JustAnOrphanStringLiteralDelimiter() {
+        return CharRange('"','"');
+    }
+
+
     @MemoMismatches
     Rule LetterOrDigit() {
         // switch to this "reduced" character space version for a ~10% parser performance speedup
         //return FirstOf(CharRange('a', 'z'), CharRange('A', 'Z'), CharRange('0', '9'), '_', '$');
-        return FirstOf(Sequence('\\', UnicodeEscape()), new JavaLetterOrDigitMatcher());
+        return FirstOf(Sequence('\\', UnicodeEscape()), new JavaLetterOrDigitMatcher(),
+                Sequence('\\',Dot()));
     }
-
-
 
     @MemoMismatches
     Rule Keyword() {
@@ -231,9 +265,6 @@ class GenericProgrammingLanguageFlatParser extends BaseParser<Object> {
     Rule Spacing() {
         return OneOrMore(FirstOf(
 
-                // whitespace
-                OneOrMore(AnyOf(" \t\r\n\f").label("Whitespace")),
-
                 // traditional comment
                 Sequence("/*", ZeroOrMore(TestNot("*/"), ANY), "*/"),
 
@@ -242,7 +273,16 @@ class GenericProgrammingLanguageFlatParser extends BaseParser<Object> {
                         "//",
                         ZeroOrMore(TestNot(AnyOf("\r\n")), ANY),
                         FirstOf("\r\n", '\r', '\n', EOI)
-                )
+                ),
+
+                Sequence(
+                        "#",
+                        ZeroOrMore(TestNot(AnyOf("\r\n")), ANY),
+                        FirstOf("\r\n", '\r', '\n', EOI)
+                ),
+
+                // whitespace
+                OneOrMore(AnyOf(" \t\r\n\f").label("Whitespace"))
         ));
     }
 }

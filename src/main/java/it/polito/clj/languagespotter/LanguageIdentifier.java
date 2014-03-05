@@ -43,7 +43,8 @@ public class LanguageIdentifier {
 			System.out.println(text);
 		}
 		catch (IOException e) {
-			System.out.println("Problem found when reading: " + fileName);
+			System.err.println("Problem found when reading: " + fileName);
+            throw new RuntimeException(e);
 		}
 	}
 			

@@ -5,9 +5,11 @@ import java.util.List;
 public class ParsingException extends RuntimeException {
 
     private List<String> parsingProblems;
+    private String code;
 
-    public ParsingException(List<String> parsingProblems){
+    public ParsingException(List<String> parsingProblems, String code){
         this.parsingProblems = parsingProblems;
+        this.code = code;
     }
 
     public List<String> getParsingProblems(){
@@ -21,6 +23,7 @@ public class ParsingException extends RuntimeException {
         for (String pe : parsingProblems){
             sb.append("\n - "+pe);
         }
+        sb.append("CODE <<<START>>>\n"+code+"\n<<<END>>>");
         return sb.toString();
     }
 }

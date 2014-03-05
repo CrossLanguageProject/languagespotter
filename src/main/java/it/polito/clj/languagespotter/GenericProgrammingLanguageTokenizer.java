@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import org.parboiled.*;
 
 import org.parboiled.errors.ParseError;
+import org.parboiled.parserunners.RecoveringParseRunner;
 import org.parboiled.parserunners.ReportingParseRunner;
 import org.parboiled.support.ParsingResult;
 
@@ -30,20 +31,33 @@ class GenericProgrammingLanguageTokenizer {
         rulesToIgnore.add("EOI");
     }
 
-    private void analyze(Node node,List<Token> tokens,String code){
+    private void analyze(Node node,List<Token> tokens,String code, ParsingResult pr){
+        try{
         if (!rulesToIgnore.contains(node.getLabel())){
-            String source = code.substring(node.getStartIndex(),node.getEndIndex());
+            String source = "";
+            // EOF is placed AFTER the end of the code
+            int start = pr.inputBuffer.getOriginalIndex(node.getStartIndex());
+            int end   = pr.inputBuffer.getOriginalIndex(node.getEndIndex());
+            /*if (node.getStartIndex()<pr.inputBuffer.getOriginalIndex()){
+                /*if (end>code.length()){
+                    // the recovering mechanism can plat weird jokes by introducing virtual chars...
+                    end = code.length();
+                }*/
+            source = code.substring(start,end);
+            //}
             tokens.add(new Token(node.getLabel(),source));
         } else {
             for (Object child : node.getChildren()){
-                analyze((Node)child,tokens,code);
+                analyze((Node)child,tokens,code,pr);
             }
+        }}catch(StringIndexOutOfBoundsException ex){
+            throw new RuntimeException("Code length: "+code.length()+", Start "+node.getStartIndex()+", End "+node.getEndIndex());
         }
     }
 
     public List<Token> parse(String code) {
         GenericProgrammingLanguageFlatParser pp = Parboiled.createParser(GenericProgrammingLanguageFlatParser.class);
-        ReportingParseRunner rpr = new ReportingParseRunner<Object>(pp.ListOfTokens());
+        RecoveringParseRunner rpr = new RecoveringParseRunner<Object>(pp.ListOfTokens());
         ParsingResult pr = rpr.run(code);
         List<String> errors = new LinkedList<>();
         for (Object pe : pr.parseErrors){
@@ -52,9 +66,9 @@ class GenericProgrammingLanguageTokenizer {
         List<Token> tokens = new LinkedList<Token>();
         if (pr.parseTreeRoot!=null){
             Node listOfTokens = pr.parseTreeRoot;
-            analyze(listOfTokens,tokens,code);
+            analyze(listOfTokens,tokens,code,pr);
         } else {
-            throw new ParsingException(errors);
+            throw new ParsingException(errors,code);
         }
         return tokens;
     }
