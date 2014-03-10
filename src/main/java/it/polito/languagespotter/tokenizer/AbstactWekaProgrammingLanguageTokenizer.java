@@ -1,9 +1,9 @@
-package it.polito.clj.languagespotter;
-
-import weka.core.tokenizers.WordTokenizer;
+package it.polito.languagespotter.tokenizer;
 
 import java.util.LinkedList;
 import java.util.List;
+
+import weka.core.tokenizers.WordTokenizer;
 
 /**
  * Adapter from GenericProgrammingLanguageTokenizer to WordTokenizer.

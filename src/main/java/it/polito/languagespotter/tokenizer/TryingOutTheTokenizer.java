@@ -1,4 +1,4 @@
-package it.polito.clj.languagespotter;
+package it.polito.languagespotter.tokenizer;
 
 import java.io.File;
 import java.io.IOException;

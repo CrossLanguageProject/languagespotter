@@ -1,4 +1,4 @@
-package it.polito.clj.languagespotter;
+package it.polito.languagespotter;
  
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -11,7 +11,7 @@ import weka.core.Attribute;
 import weka.core.DenseInstance;
 import weka.core.Instances;
 
-public class LanguageIdentifier {
+public class Identifier {
 
 	/**
 	 * String that stores the text to guess its language.
@@ -116,7 +116,7 @@ public class LanguageIdentifier {
 	
 	public static void main (String[] args) {
 	
-		LanguageIdentifier classifier = new LanguageIdentifier();
+		Identifier classifier = new Identifier();
 		classifier.load("test/test.java");
 		classifier.loadModel("profiles.model");
 		classifier.makeInstance();

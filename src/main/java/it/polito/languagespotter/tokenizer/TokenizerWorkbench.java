@@ -1,4 +1,4 @@
-package it.polito.clj.languagespotter;
+package it.polito.languagespotter.tokenizer;
 
 import org.parboiled.common.Sink;
 import org.parboiled.errors.ParseError;

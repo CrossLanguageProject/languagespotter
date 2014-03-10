@@ -1,14 +1,13 @@
-package it.polito.clj.languagespotter;
+package it.polito.languagespotter;
 
 import static org.junit.Assert.assertArrayEquals;
-
-import org.junit.Test;
+import it.polito.languagespotter.tokenizer.WekaLexicalProgrammingLanguageTokenizer;
 
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 public class WekaLexicalProgrammingLanguageTokenizerTest {
 

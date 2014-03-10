@@ -1,4 +1,4 @@
-package it.polito.clj.languagespotter;
+package it.polito.languagespotter.tokenizer;
 
 import java.util.List;
 import java.util.LinkedList;
@@ -19,7 +19,7 @@ import static org.parboiled.errors.ErrorUtils.printParseError;
  * Basically it is build unifying all the tokens definitions from a plethora
  * of languages.
  */
-class GenericProgrammingLanguageTokenizer {
+public class GenericProgrammingLanguageTokenizer {
 
     private List<String> rulesToIgnore = new LinkedList<>();
 

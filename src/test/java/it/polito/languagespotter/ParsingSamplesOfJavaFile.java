@@ -1,6 +1,8 @@
-package it.polito.clj.languagespotter;
+package it.polito.languagespotter;
 
 import org.junit.Test;
+
+import it.polito.languagespotter.tokenizer.WekaLexicalProgrammingLanguageTokenizer;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;

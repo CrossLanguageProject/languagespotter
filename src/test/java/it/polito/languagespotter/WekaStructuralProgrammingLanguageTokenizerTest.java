@@ -1,7 +1,9 @@
-package it.polito.clj.languagespotter;
+package it.polito.languagespotter;
 
 
 import org.junit.Test;
+
+import it.polito.languagespotter.tokenizer.WekaStructuralProgrammingLanguageTokenizer;
 
 import java.util.LinkedList;
 import java.util.List;

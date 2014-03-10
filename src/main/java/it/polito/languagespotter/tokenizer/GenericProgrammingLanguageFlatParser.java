@@ -1,4 +1,4 @@
-package it.polito.clj.languagespotter;
+package it.polito.languagespotter.tokenizer;
 
 import org.parboiled.BaseParser;
 import org.parboiled.MatcherContext;

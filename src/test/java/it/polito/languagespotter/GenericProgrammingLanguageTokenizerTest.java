@@ -1,7 +1,8 @@
-package it.polito.clj.languagespotter;
+package it.polito.languagespotter;
 
+import static org.junit.Assert.assertArrayEquals;
+import it.polito.languagespotter.tokenizer.*;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class GenericProgrammingLanguageTokenizerTest {
 
