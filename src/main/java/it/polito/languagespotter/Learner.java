@@ -6,6 +6,7 @@ import it.polito.languagespotter.tokenizer.WekaStructuralProgrammingLanguageToke
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.Random;
 
 import org.apache.commons.cli.CommandLine;
@@ -22,6 +23,7 @@ import weka.classifiers.evaluation.Evaluation;
 import weka.classifiers.functions.SMO;
 import weka.core.Instances;
 import weka.core.converters.ArffLoader.ArffReader;
+import weka.core.converters.ArffSaver;
 import weka.core.converters.TextDirectoryLoader;
 import weka.core.tokenizers.Tokenizer;
 import weka.core.tokenizers.WordTokenizer;
@@ -33,7 +35,7 @@ public class Learner {
 	
 	private String in;
 	private String out;
-	private Tokenizer tokenizer = new WordTokenizer();
+	private Tokenizer tokenizer = new WekaStructuralProgrammingLanguageTokenizer();
 	private Classifier classifier = new NaiveBayes();
 	private Instances trainData;
 
@@ -71,8 +73,8 @@ public class Learner {
             if (trainData.numAttributes()!=MIN_NUM_ATTRIBUTES){
                 throw new IllegalStateException("Train data expected to have "+MIN_NUM_ATTRIBUTES+" attribute, it has "+trainData.numAttributes());
             }
-		
-			System.out.println("===== Loaded dataset from folder: " + name + " =====");
+   			System.out.println("===== Loaded dataset from folder: " + name + " =====");
+
 		}
 		catch (Exception e) {
 			System.err.println("Problem found when reading from folder: " + name);
@@ -114,10 +116,10 @@ public class Learner {
             filter.setTokenizer(tokenizer);
            		
 			//structural
-            /*filter.setOptions(
-					weka.core.Utils.splitOptions("-W 100000 " + 
-				                                 "-tokenizer \"it.polito.clj.languagespotter.WekaStructuralProgrammingLanguageTokenizer\" "));		
-            */
+//            filter.setOptions(
+//					weka.core.Utils.splitOptions("-W 100000 " + 
+//				                                 "-tokenizer \"it.polito.clj.languagespotter.WekaStructuralProgrammingLanguageTokenizer\" "));		
+            
             trainData = Filter.useFilter(trainData, filter);
 
 	        Reorder r = new Reorder();
@@ -126,6 +128,8 @@ public class Learner {
 	        trainData = Filter.useFilter(trainData, r);
 		    //System.out.println(trainData);
 	       
+	        saveArff(trainData);
+	        
 	        classifier.buildClassifier(trainData);
 		    System.out.println("\n\nClassifier model:\n\n" + classifier);
 
@@ -137,6 +141,20 @@ public class Learner {
 		}
 	}
 	
+	private void saveArff(Instances dataSet)
+	{
+        System.out.println("===== Serializing to /tmp/lexical.arff ====");
+		ArffSaver saver = new ArffSaver();
+		saver.setInstances(dataSet);
+	    try {
+			saver.setFile(new File(getOut() + ".arff"));
+			saver.writeBatch();
+			System.out.println("==== Serialization done ====");
+	    } catch (IOException e) {
+			e.printStackTrace();
+		}		
+	}
+
 	/**
 	 * This method saves the trained model into a file. This is done by
 	 * simple serialization of the classifier object.
@@ -155,9 +173,12 @@ public class Learner {
 	public static void main (String[] args) 
 	{
 		Learner learner = new Learner();
-		learner.loadDatasetFromDirectory("profiles/gists/");
+		learner.setIn("profiles/gist10/");
+		learner.setOut("models/gist10-lexical.out");
+		
+		learner.loadDatasetFromDirectory(learner.getIn());
 		learner.learn();
-		learner.saveModel("models/gist.out");
+		learner.saveModel(learner.getOut());
 		learner.evaluate();
 	}
 	
@@ -177,6 +198,7 @@ public class Learner {
     	   loadDatasetFromDirectory(getIn());
    		   learn();
    		   saveModel(getOut());
+   		   /*this is optional, but it gives an idea about the performance of your data*/
    		   evaluate();
        }
 	}
@@ -189,24 +211,26 @@ public class Learner {
 		try {
 			line = parser.parse( options, args );
 
-		    if (line.hasOption("in") && line.hasOption("out") && line.hasOption("classifier")) 
+		    if (line.hasOption("in") && line.hasOption("out") 
+		    		&& line.hasOption("classifier") && line.hasOption("tokenizer")) 
 		    {
 		    	setIn( line.getOptionValue("in") );
 		        setOut( line.getOptionValue("out") );
-		        
 		        String tokenizer = line.getOptionValue("tokenizer");
+		        
 		        switch (tokenizer) {
 				case "word":
 					setTokenizer( new WordTokenizer() );
 					break;
 				case "lexical":
 					setTokenizer( new WekaLexicalProgrammingLanguageTokenizer() );
+					break;
 				case "structural":
 					setTokenizer( new WekaStructuralProgrammingLanguageTokenizer() );
+					break;
 				default:
 					break;
 				}
-		        
 		        
 		        String classifierName = line.getOptionValue("classifier");
 		        switch (classifierName) {
@@ -214,7 +238,9 @@ public class Learner {
 					setClassifier( new NaiveBayes() );
 					break;
 				case "hmm":
-					setClassifier( new HMM() );
+					HMM hmm = new HMM();
+					hmm.setNumStates(3);
+					setClassifier( hmm );
 				case "svm":
 					setClassifier( new SMO() );
 				default:

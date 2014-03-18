@@ -1,6 +1,5 @@
 package it.polito.languagespotter;
 
-import java.io.IOException;
 import java.util.Arrays;
 
 import org.apache.commons.cli.CommandLine;
@@ -31,7 +30,7 @@ public class CLI {
 				break;
 			
 			default:
-				throw new IllegalArgumentException("Invalid operation: " + action + ". Allowed operation: sampling, discovery, clustering, evaluation");
+				throw new IllegalArgumentException("Invalid operation: " + action + ". Allowed operation: learn, classify");
 			}
 			
 		} catch (ParseException e) {
