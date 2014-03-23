@@ -38,7 +38,6 @@ public class Learner {
 	private Tokenizer tokenizer = new WekaStructuralProgrammingLanguageTokenizer();
 	private Classifier classifier = new NaiveBayes();
 	private Instances trainData;
-
 	
 	private static final int MIN_NUM_ATTRIBUTES = 2;
 			
@@ -241,8 +240,10 @@ public class Learner {
 					HMM hmm = new HMM();
 					hmm.setNumStates(3);
 					setClassifier( hmm );
+					break;
 				case "svm":
 					setClassifier( new SMO() );
+					break;
 				default:
 					break;
 				}

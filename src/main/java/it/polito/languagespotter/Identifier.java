@@ -1,15 +1,18 @@
 package it.polito.languagespotter;
  
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import weka.classifiers.Classifier;
+import weka.classifiers.evaluation.Evaluation;
 import weka.core.Attribute;
 import weka.core.DenseInstance;
 import weka.core.Instances;
+import weka.core.converters.TextDirectoryLoader;
 
 public class Identifier {
 
@@ -25,6 +28,10 @@ public class Identifier {
 	 * Object that stores the classifier.
 	 */
 	Classifier classifier;
+	
+	private static final int MIN_NUM_ATTRIBUTES = 2;
+	private Instances testData;
+
 		
 	/**
 	 * This method loads the text to be classified.
@@ -114,12 +121,63 @@ public class Identifier {
 		}		
 	}
 	
+	public void loadDatasetFromDirectory(String name) {
+		try {
+			TextDirectoryLoader loader = new TextDirectoryLoader();
+		    loader.setDirectory(new File(name));
+			testData = loader.getDataSet();
+            if (testData.numAttributes()!=MIN_NUM_ATTRIBUTES){
+                throw new IllegalStateException("Train data expected to have "+MIN_NUM_ATTRIBUTES+" attribute, it has "+testData.numAttributes());
+            }
+   			System.out.println("===== Loaded dataset from folder: " + name + " =====");
+
+		}
+		catch (Exception e) {
+			System.err.println("Problem found when reading from folder: " + name);
+			throw new RuntimeException(e);
+		}
+	}
+	
+	public void evaluate() {
+
+		try {
+			Evaluation eval = new Evaluation(testData);
+		    eval.evaluateModel(classifier, testData);
+		    String summaryString = eval
+		            .toSummaryString("\nResults\n======\n", false);
+
+		    System.out.println(summaryString);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    //eval.crossValidateModel(classifier, data, 10, new Random(1));
+
+	}
+	
 	public static void main (String[] args) {
 	
 		Identifier classifier = new Identifier();
-		classifier.load("test/test.java");
-		classifier.loadModel("profiles.model");
-		classifier.makeInstance();
-		classifier.classify();		
+		
+		classifier.loadModel("models/github10-hmm-lexical.model");
+		classifier.loadDatasetFromDirectory("profiles/gist10");
+//		
+//		File dir = new File("profiles/gist10");  	
+//		File[] subDirs = dir.listFiles(new FileFilter() {
+//			public boolean accept(File pathname) {
+//				return pathname.isDirectory();
+//			}
+//		});  
+//		   
+//		for (File subDir : subDirs) {  
+//		    System.out.println(subDir.getName());  
+//		}  
+//		
+		
+		
+//		classifier.load("profiles/gist10");
+
+//		classifier.makeInstance();
+		classifier.evaluate();		
 	}
 }	
