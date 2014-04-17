@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.*;
 import java.util.*;
+import weka.core.tokenizers.WordTokenizer;
 
 public class TokenCounter {
 
@@ -46,6 +47,17 @@ public class TokenCounter {
         return ""+values.get(pos0)+":"+values.get(pos25)+":"+values.get(pos50)+":"+values.get(pos75)+":"+values.get(pos100);
     }
 
+    private static int numberOfWords(String code){
+        WordTokenizer word = new WordTokenizer();
+        word.tokenize(code);
+        int counter = 0;
+        while (word.hasMoreElements()){
+            word.nextElement();
+            counter++;
+        }
+        return counter;
+    }
+
     private static void examineFile(File file) throws IOException {
         String code = readFile(file);
         GenericProgrammingLanguageTokenizer t = new GenericProgrammingLanguageTokenizer();
@@ -56,6 +68,13 @@ public class TokenCounter {
             numberOfTokensByTokenizer.put("lexical",new LinkedList<Integer>());
         }
         numberOfTokensByTokenizer.get("lexical").add(tokens.size());
+
+        int nbOfWords = numberOfWords(code);
+
+        if (!numberOfTokensByTokenizer.containsKey("word")){
+            numberOfTokensByTokenizer.put("word",new LinkedList<Integer>());
+        }
+        numberOfTokensByTokenizer.get("word").add(nbOfWords);
     }
 
     public static void main(String[] args) throws IOException {
