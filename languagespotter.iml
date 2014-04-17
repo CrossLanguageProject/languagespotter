@@ -12,6 +12,13 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.4" level="project" />
+    <orderEntry type="library" name="Maven: commons-cli:commons-cli:1.2" level="project" />
+    <orderEntry type="library" name="Maven: org.parboiled:parboiled-java:1.1.6" level="project" />
+    <orderEntry type="library" name="Maven: org.parboiled:parboiled-core:1.1.6" level="project" />
+    <orderEntry type="library" name="Maven: org.ow2.asm:asm:4.1" level="project" />
+    <orderEntry type="library" name="Maven: org.ow2.asm:asm-tree:4.1" level="project" />
+    <orderEntry type="library" name="Maven: org.ow2.asm:asm-analysis:4.1" level="project" />
+    <orderEntry type="library" name="Maven: org.ow2.asm:asm-util:4.1" level="project" />
     <orderEntry type="module-library">
       <library name="Maven: nz.ac.waikato.cms.weka:weka:3.7.2">
         <CLASSES>
@@ -30,12 +37,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="Maven: org.parboiled:parboiled-java:1.1.6" level="project" />
-    <orderEntry type="library" name="Maven: org.parboiled:parboiled-core:1.1.6" level="project" />
-    <orderEntry type="library" name="Maven: org.ow2.asm:asm:4.1" level="project" />
-    <orderEntry type="library" name="Maven: org.ow2.asm:asm-tree:4.1" level="project" />
-    <orderEntry type="library" name="Maven: org.ow2.asm:asm-analysis:4.1" level="project" />
-    <orderEntry type="library" name="Maven: org.ow2.asm:asm-util:4.1" level="project" />
   </component>
 </module>
 
