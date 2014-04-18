@@ -61,13 +61,17 @@ public class TokenCounter {
     private static void examineFile(File file) throws IOException {
         String code = readFile(file);
         GenericProgrammingLanguageTokenizer t = new GenericProgrammingLanguageTokenizer();
-        WekaLexicalProgrammingLanguageTokenizer lexical = new WekaLexicalProgrammingLanguageTokenizer();
-        lexical.tokenize(code);
-        List<String> tokens = lexical.getAllTokens();
-        if (!numberOfTokensByTokenizer.containsKey("lexical")){
-            numberOfTokensByTokenizer.put("lexical",new LinkedList<Integer>());
+        try {
+            WekaLexicalProgrammingLanguageTokenizer lexical = new WekaLexicalProgrammingLanguageTokenizer();
+            lexical.tokenize(code);
+            List<String> tokens = lexical.getAllTokens();
+            if (!numberOfTokensByTokenizer.containsKey("lexical")){
+                numberOfTokensByTokenizer.put("lexical",new LinkedList<Integer>());
+            }
+            numberOfTokensByTokenizer.get("lexical").add(tokens.size());
+        } catch (Exception e){
+            System.err.println("Something went wrong while parsing file "+file);
         }
-        numberOfTokensByTokenizer.get("lexical").add(tokens.size());
 
         int nbOfWords = numberOfWords(code);
 
